@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <b class="click">just click in the heart and wait :D  (ahbt lota bch trj3 btwali)</b>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear LAKLOUKTI.</strong>
+                        <p>
+                            so i made this website cuz i think u will love it :D
+                            just want to say that i love u sm and im so happy to have u in my life 
+                            and i want to make u my gf again tbh i said i will wait but i can't wait to
+                            call u my gf again im trying my best to be a good partner for u cuz i love u sm 
+                            i love ur eyes ur smile ur laught ur hair ur style ur music test u are my word fr
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+    <script>
+        document.addEventListener('mousemove',function(e){
+            let body = document.querySelector('body');
+            let heart = document.createElement('span');
+            let x = e.offsetX;
+            let y = e.offsetY;
+            heart.style.left = x+'px';
+            heart.style.top = y+'px';
+
+            let size = Math.random()* 80;
+            heart.style.width= 20 +size+'px';
+            heart.style.height= 20 +size+'px';
+
+            let transformValue = Math.random()*360;
+            heart.style.transform = 'rotate('+transformValue  +'deg)';
+
+            body.appendChild(heart);
+
+            setTimeout(function(){
+                heart.remove();
+            },1000)
+        })
+    </script>
+    <div class="wrapper">
+        <a href="index.html">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            back
+        </a>
+</body>
+</html>
